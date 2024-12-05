@@ -1,0 +1,108 @@
+.album-detail {
+  font-family: Arial, sans-serif;
+  /* padding: 16px; */
+  background-color: #fafafaff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 10px;
+  background-color: white;
+}
+
+.back-button, .share-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+}
+
+.album-info {
+  padding: 16px;
+  text-align: left;
+  background-color: white;
+  width: 100%;
+}
+
+.album-image {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  display: block;
+  text-align: center;
+  color: #ccc;
+  /* background-color: #fafafaff; */
+}
+
+.album-meta {
+  text-align: left;
+  margin-top: 16px;
+  background-color: white;
+}
+
+.cd-tag {
+  display: inline-block;
+  background-color: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.matching-history, .price-section {
+  padding: 10px;
+  margin-top: 24px;
+  background-color: white;
+}
+
+.price-inputs {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.price-inputs input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.actions {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  margin-top: 24px;
+}
+
+.buy-button {
+  background-color: #ff5757;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sell-button {
+  background-color: #faff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.like-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+}
+
+.footer-note {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #888;
+}
