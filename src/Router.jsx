@@ -13,8 +13,8 @@ const AppRoutes = () => {
             <Route path="/" element={<App />}></Route>
             <Route path="/login" element={<KakaoLogin />}></Route>
             {/* ChatRoomList는 pages 폴더 안에 있으므로 경로 수정 */}
-            <Route path="/chat" element={<ChatRoomList />} />
-            <Route path="/chat/:roomId" element={<ChatRoomItem />} />
+            <Route path="/chat/rooms" element={<ChatRoomList />} />
+            <Route path="/chat/:roomId" element={<ChatRoom />} />
 
             <Route path="/chatRoom" element={<ChatRoom />} />
         </Routes>
