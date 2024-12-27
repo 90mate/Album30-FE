@@ -151,14 +151,16 @@
 import React, { useState, useEffect } from 'react';
 import { Client } from '@stomp/stompjs';
 import axios from 'axios';
+import { useParams } from 'react-router-dom'; // useParams 훅을 사용하여 URL 파라미터 추출
 
 const ChatRoom = () => {
+  const { roomId } = useParams(); // URL에서 roomId 가져오기
   const [stompClient, setStompClient] = useState(null);
   const [connected, setConnected] = useState(false);
   const [messages, setMessages] = useState([]);  // 메시지 상태
   const [messageContent, setMessageContent] = useState('');
   const [chatRoomInfo, setChatRoomInfo] = useState({ chatRoomId: '', type: '' });
-  const roomId = 4;
+
   const userId = 2;
 
   // STOMP 클라이언트 연결 및 구독 설정
@@ -182,7 +184,7 @@ const ChatRoom = () => {
     return () => {
       client.deactivate();
     };
-  }, []);
+  }, [roomId]);
 
   // 채팅방에 메시지 구독
   const subscribeToChatRoom = () => {
