@@ -253,7 +253,7 @@ const ChatRoom = () => {
     }
   };
 
-  const sendMessage = (content, type = 'message') => {
+  const sendMessage = (content, type = 'MESSAGE') => {
     if (!content.trim()) {
       alert('Message cannot be empty.');
       return;
