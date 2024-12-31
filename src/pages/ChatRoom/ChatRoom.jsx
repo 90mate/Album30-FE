@@ -281,6 +281,35 @@ const ChatRoom = () => {
       { senderId: userId, message: content, type },
     ]);
   };
+  
+  const sendQuickMessage = (content, type) => {
+    if (!content.trim()) {
+      alert('Message cannot be empty.');
+      return;
+    }
+
+    if (!connected) {
+      alert('STOMP connection is not established.');
+      return;
+    }
+
+    const message = {
+      senderId: userId,
+      message: content,
+      chatRoomId: roomId,
+      type,
+    };
+
+    stompClient.publish({
+      destination: `/app/${roomId}`,
+      body: JSON.stringify(message),
+    });
+
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { senderId: userId, message: content, type },
+    ]);
+  };
 
  // 빠른 메시지 버튼 핸들러
 const handleQuickMessage = async (type) => {
@@ -304,7 +333,7 @@ const handleQuickMessage = async (type) => {
   }
 
   // 메시지를 화면에 출력
-  sendMessage(message, type);
+  sendQuickMessage(message, type);
 };
 
 
