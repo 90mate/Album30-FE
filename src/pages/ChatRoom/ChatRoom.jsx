@@ -288,7 +288,7 @@ const handleQuickMessage = async (type) => {
   
   try {
     // URL에 icon과 memberId를 쿼리 파라미터로 전달
-    const response = await fetch(`/api/quickChat/${type}?memberId=${userId}`, {
+    const response = await  await fetch(`http://localhost:8080/quickChat/${type}?memberId=${userId}`, {
       method: 'GET',
     });
 
@@ -342,16 +342,16 @@ const handleQuickMessage = async (type) => {
 
       {/* Quick Messages */}
       <div className="quick-messages">
-        <button className="btn btn-info" onClick={() => handleQuickMessage('photoVideo')}>
+        <button className="btn btn-info" onClick={() => handleQuickMessage('PHOTOVIEDEO')}>
           📷 Photo/Video
         </button>
-        <button className="btn btn-info" onClick={() => handleQuickMessage('account')}>
+        <button className="btn btn-info" onClick={() => handleQuickMessage('ACCOUNT')}>
           💳 Share Account
         </button>
-        <button className="btn btn-info" onClick={() => handleQuickMessage('address')}>
+        <button className="btn btn-info" onClick={() => handleQuickMessage('ADDRESS')}>
           📍 Share Address
         </button>
-        <button className="btn btn-info" onClick={() => handleQuickMessage('report')}>
+        <button className="btn btn-info" onClick={() => handleQuickMessage('REPORT')}>
           ⚠️ Report History
         </button>
       </div>
