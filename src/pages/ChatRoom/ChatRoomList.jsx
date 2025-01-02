@@ -47,6 +47,7 @@ const ChatRoomList = () => {
                         {/* Link 컴포넌트를 사용하여 채팅방으로 이동 */}
                         <Link to={`/chat/${room.chatRoomId}`}>
                             <ChatRoomItem
+                                status = {room.status}
                                 roomId={room.chatRoomId}
                                 seller={room.seller}
                                 itemName={room.group + room.artist}
