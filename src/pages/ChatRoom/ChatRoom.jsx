@@ -190,6 +190,7 @@ import React, { useState, useEffect } from 'react';
 import { Client } from '@stomp/stompjs';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import './ChatRoom.css';
 
 const ChatRoom = () => {
   const { roomId } = useParams(); // URL에서 roomId 가져오기
@@ -355,20 +356,25 @@ const handleQuickMessage = async (type) => {
         </div>
         <div className="panel-body">
           <ul id="history-list" className="list-group">
-            {messages.length > 0 ? (
-              messages.map((chat, index) => (
-                <li key={index} className="list-group-item">
-                  <strong>{chat.senderId}:</strong> {chat.message}
-                  <span className="text-muted"> ({chat.type})</span>
-                </li>
-              ))
-            ) : (
-              <li className="list-group-item text-muted">No chat history available.</li>
-            )}
+                {messages.length > 0 ? (
+            messages.map((chat, index) => (
+              <li
+                key={index}
+                className={`list-group-item ${
+                  chat.senderId === userId ? 'message sent' : 'message received'
+                }`}
+              >
+                <strong>{chat.senderId}:</strong> {chat.message}
+                <span className="text-muted"> ({chat.type})</span>
+              </li>
+            ))
+          ) : (
+            <li className="list-group-item text-muted">No chat history available.</li>
+          )}
           </ul>
         </div>
       </div>
-
+      
       {/* Quick Messages */}
       <div className="quick-messages">
         <button className="btn btn-info" onClick={() => handleQuickMessage('PHOTOVIEDEO')}>

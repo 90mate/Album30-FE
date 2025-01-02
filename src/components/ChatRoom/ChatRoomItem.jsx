@@ -1,4 +1,5 @@
 import React from 'react';
+import './ChatRoomItem.css'; // CSS 파일 연결
 
 const ChatRoomItem = ({ roomId, status, seller, itemName, lastMessage, onEnterChatRoom }) => {
     return (
