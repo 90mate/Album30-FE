@@ -1,12 +1,14 @@
 import React from 'react';
+import './ChatRoomItem.css'; // CSS 파일 연결
 
-const ChatRoomItem = ({ roomId, seller, itemName, lastMessage, onEnterChatRoom }) => {
+const ChatRoomItem = ({ roomId, status, seller, itemName, lastMessage, onEnterChatRoom }) => {
     return (
         <div className="panel panel-default">
             <div className="panel-heading">
                 <h3 className="panel-title">채팅방 {roomId}</h3>
             </div>
             <div className="panel-body">
+                <p><strong>상태:</strong> {status}</p>
                 <p><strong>판매자:</strong> {seller}</p>
                 <p><strong>물품명:</strong> {itemName}</p>
                 <p><strong>마지막 메시지:</strong> {lastMessage}</p>

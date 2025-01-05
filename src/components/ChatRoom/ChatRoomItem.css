@@ -1,0 +1,59 @@
+.chat-room-item {
+  margin: 15px auto;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-room-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.panel-heading {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 15px;
+  border-radius: 10px 10px 0 0;
+}
+
+.panel-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.panel-body {
+  padding: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.panel-body p {
+  margin: 5px 0;
+}
+
+.status {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.seller, .item-name, .last-message {
+  font-weight: normal;
+}
+
+.btn-primary.enter-chat-room {
+  margin-top: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary.enter-chat-room:hover {
+  background-color: #0056b3;
+}

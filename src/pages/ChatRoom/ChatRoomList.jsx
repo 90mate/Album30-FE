@@ -7,7 +7,7 @@ const ChatRoomList = () => {
     const [chatRooms, setChatRooms] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const memberId = 5; // 실제 로그인된 사용자의 memberId를 동적으로 가져와야 합니다.
+    const memberId = 6; // 실제 로그인된 사용자의 memberId를 동적으로 가져와야 합니다.
 
     useEffect(() => {
         axios.get('http://localhost:8080/chatRooms', {
@@ -47,6 +47,7 @@ const ChatRoomList = () => {
                         {/* Link 컴포넌트를 사용하여 채팅방으로 이동 */}
                         <Link to={`/chat/${room.chatRoomId}`}>
                             <ChatRoomItem
+                                status = {room.status}
                                 roomId={room.chatRoomId}
                                 seller={room.seller}
                                 itemName={room.group + room.artist}
