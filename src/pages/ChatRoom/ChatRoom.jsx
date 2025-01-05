@@ -200,7 +200,7 @@ const ChatRoom = () => {
   const [messageContent, setMessageContent] = useState('');
   const [chatRoomInfo, setChatRoomInfo] = useState({ chatRoomId: '', type: '' });
 
-  const userId = 2;
+  const userId = 6;
 
   useEffect(() => {
     const client = new Client({
